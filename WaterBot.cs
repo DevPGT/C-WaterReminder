@@ -5,10 +5,9 @@ using Telegram.Bot.Args;
 
 namespace WaterPGBot
 {
-    // 713149816
     class Listener
     {
-       static ITelegramBotClient botClient = new TelegramBotClient("1048456622:AAG2j2o0aNjv_YRykcePDqq1knVMr-xFh7g");
+       static ITelegramBotClient botClient = new TelegramBotClient("_YOURBOTID");
        static void Main(string[] args)
         {
             var me = botClient.GetMeAsync().Result;
@@ -57,7 +56,7 @@ namespace WaterPGBot
         public static async void StartRemind()
         {
             await botClient.SendTextMessageAsync(
-                chatId: 713149816,
+                chatId: _YOURCHATID,
                 text: getMessage() + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second
             );
             Thread.Sleep( _DELAY );
